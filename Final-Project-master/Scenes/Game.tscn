@@ -3874,7 +3874,7 @@ scale = Vector2( 1, 6.95263 )
 texture = ExtResource( 7 )
 
 [node name="Sprite326" type="Sprite" parent="Map"]
-position = Vector2( 1292.68, -745.695 )
+position = Vector2( 1292.68, -742.619 )
 rotation = 1.5708
 scale = Vector2( 1, 4.1038 )
 texture = ExtResource( 7 )
@@ -6970,6 +6970,48 @@ uppercase = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+
+[node name="blue" type="ColorRect" parent="Player/Camera2D"]
+margin_left = -710.0
+margin_top = -510.0
+margin_right = -670.0
+margin_bottom = -470.0
+rect_scale = Vector2( 2, 1 )
+color = Color( 0.0627451, 0.152941, 0.509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="red" type="ColorRect" parent="Player/Camera2D"]
+margin_left = 690.0
+margin_top = -510.0
+margin_right = 730.0
+margin_bottom = -470.0
+rect_scale = Vector2( 2, 1 )
+color = Color( 0.615686, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="Player/Camera2D"]
+margin_left = 700.0
+margin_top = -500.0
+margin_right = 758.0
+margin_bottom = -486.0
+text = "Health: 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Player/Camera2D"]
+margin_left = -700.0
+margin_top = -500.0
+margin_right = -649.0
+margin_bottom = -486.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Zombies" type="Node2D" parent="."]
 
@@ -25116,3 +25158,5 @@ rotation = -1.5708
 texture = ExtResource( 46 )
 
 [node name="Bullet" type="Node2D" parent="."]
+
+[node name="Explosion" type="Node2D" parent="."]

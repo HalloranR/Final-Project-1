@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+onready var Explosion = load("res://Scenes/Explosion.tscn")
 
 func _ready():
 	pass # Replace with function body.
@@ -12,7 +13,12 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 
 func _on_Area2D_body_entered(body):
-	#play explosion
+	var explosion = Explosion.instance()
+	explosion.position = position
+
+	
+	get_node("/root/Game/Explosion").add_child(explosion)
+	
 	if body.get_parent().name == "Zombies":
 		body.kill()
 		queue_free()

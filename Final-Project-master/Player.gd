@@ -47,15 +47,13 @@ func _physics_process(delta):
 			if coll.has_method("kill"):
 				#coll.kill()
 				score += 100
+				$Camera2D/Score.text = "Score: " + str(score)
  
-func kill():
-	health -= 1
-	if health <=0:
-		get_tree().reload_current_scene()
 
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Zombie":
 		health -=1
+		$Camera2D/Health.text = "Health: " + str(health)
 		if health <= 0:
 			get_tree().reload_current_scene()
