@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Assets/Topdown Shooter/PNG/Tiles/tile_20.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Topdown Shooter/PNG/Tiles/tile_01.png" type="Texture" id=2]
@@ -46,6 +46,8 @@
 [ext_resource path="res://Assets/buildings/Screen Shot 2020-04-28 at 7.49.43 PM.png" type="Texture" id=44]
 [ext_resource path="res://Assets/Topdown Shooter/PNG/Tiles/tile_472.png" type="Texture" id=45]
 [ext_resource path="res://Assets/Topdown Shooter/PNG/Tiles/tile_183.png" type="Texture" id=46]
+[ext_resource path="res://Scripts/Water.gd" type="Script" id=47]
+[ext_resource path="res://Scripts/Terrain.gd" type="Script" id=48]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 165.622, 101.955 )
@@ -79,7 +81,6 @@ height = 48.9995
 position = Vector2( 12.1199, 1090.79 )
 
 [node name="Background" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2" type="Sprite" parent="Background"]
 position = Vector2( 4414.46, -2401.97 )
@@ -92,11 +93,13 @@ scale = Vector2( 216.001, 140.901 )
 texture = ExtResource( 2 )
 
 [node name="Water" type="Node2D" parent="."]
-visible = false
+script = ExtResource( 47 )
 
 [node name="Water4" type="StaticBody2D" parent="Water"]
 position = Vector2( 3045.97, 801.042 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 8
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -128,6 +131,8 @@ shape = SubResource( 1 )
 [node name="Water" type="StaticBody2D" parent="Water"]
 position = Vector2( 1989.13, 1126.48 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -144,6 +149,8 @@ shape = SubResource( 2 )
 [node name="Water123" type="StaticBody2D" parent="Water"]
 position = Vector2( -710.619, 1116.59 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -160,6 +167,8 @@ shape = SubResource( 2 )
 [node name="Water124" type="StaticBody2D" parent="Water"]
 position = Vector2( -3103.8, 256.234 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -176,6 +185,8 @@ shape = SubResource( 2 )
 [node name="Water97" type="StaticBody2D" parent="Water"]
 position = Vector2( 8519.45, -1121.76 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -192,6 +203,8 @@ shape = SubResource( 2 )
 [node name="Water127" type="StaticBody2D" parent="Water"]
 position = Vector2( 8519.45, -1121.76 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -208,6 +221,8 @@ shape = SubResource( 2 )
 [node name="Water134" type="StaticBody2D" parent="Water"]
 position = Vector2( 11838.7, -2971.13 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -224,6 +239,8 @@ shape = SubResource( 2 )
 [node name="Water156" type="StaticBody2D" parent="Water"]
 position = Vector2( 11353.8, -8416.33 )
 scale = Vector2( 1.59654, 1.50769 )
+collision_layer = 4
+collision_mask = 7
 __meta__ = {
 "_edit_group_": true
 }
@@ -2917,7 +2934,6 @@ position = Vector2( -7.60608, 20.395 )
 shape = SubResource( 1 )
 
 [node name="Map" type="Node2D" parent="."]
-visible = false
 position = Vector2( 870.755, 591.367 )
 scale = Vector2( 4, 4 )
 
@@ -6961,9 +6977,9 @@ current = true
 position = Vector2( 203.535, 389.821 )
 
 [node name="Terrain" type="Node2D" parent="."]
-visible = false
 position = Vector2( 2020.62, 300.557 )
 scale = Vector2( 1.59654, 1.50769 )
+script = ExtResource( 48 )
 
 [node name="Building1" type="StaticBody2D" parent="Terrain"]
 __meta__ = {
