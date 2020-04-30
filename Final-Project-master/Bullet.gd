@@ -13,4 +13,12 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 func _on_Area2D_body_entered(body):
 	#play explosion
-	queue_free()
+	if body.get_parent().name == "Zombies":
+		body.kill()
+		queue_free()
+
+	if body.get_parent().name == "Terrain":
+		queue_free()
+
+	if body.get_parent().name == "Trees":
+		queue_free()

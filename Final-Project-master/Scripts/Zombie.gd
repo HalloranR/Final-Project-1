@@ -19,6 +19,7 @@ func _physics_process(delta):
    
 	if raycast.is_colliding():
 		var coll = raycast.get_collider()
+		print(coll.name)
 		if coll.name == "Player":
 			coll.kill()
  
