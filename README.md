@@ -1,1 +1,1 @@
-# Final-Project-1
+This was the final project for a class I took. Me and two other classmates created this for a game jam whose theme was Carona. As such we created a simple top down zombie survival game in the span of 48 hours. All work for this porject was done in Godot. My contributions involve creating the shooting mechanics, raytracing, movement, heath, and changing screnes.
